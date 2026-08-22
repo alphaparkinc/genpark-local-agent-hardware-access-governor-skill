@@ -1,0 +1,41 @@
+{
+  "name": "genpark-local-agent-hardware-access-governor-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - Local hardware AI agent access governor enforcing scoped filesystem, network permissions, and resource quotas with audit logging.",
+  "author": "genpark",
+  "category": "security",
+  "tags": [
+    "local-agent",
+    "security-sandbox",
+    "access-control",
+    "hardware-governor",
+    "plowlatch"
+  ],
+  "inputs": {
+    "agent_id": {
+      "type": "string"
+    },
+    "requested_action": {
+      "type": "string"
+    },
+    "scope_policy": {
+      "type": "object"
+    }
+  },
+  "outputs": {
+    "decision": {
+      "type": "string"
+    },
+    "enforced_scopes": {
+      "type": "array"
+    },
+    "hardware_limits": {
+      "type": "object"
+    },
+    "audit_event_logged": {
+      "type": "boolean"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
